@@ -1,0 +1,26 @@
+========================================================
+rst2pdf 続き?(とりあえずメモ。)
+========================================================
+
+   :URL: http://blog.livedoor.jp/lab1092/archives/51642696.html
+
+
+st2pdfの件。
+
+とりあえずメモ。
+
+Windowsだと、インストールの確認は" C:Python26Libsite-packages"で。
+
+こんなエラーが出たり、とか、生成がものすごく遅いとか。
+そういう時は、フォント検索パスの指定を変更してみるとか
+
+フォント名に関してはFontForge使って確認するといいかな
+FontForgeのWindows用バイナリはこちらに?( `unofficial fontforge-mingw <http://www.geocities.jp/meir000/fontforge/>`_ )
+
+.. code-block :: none
+
+   writing MyProject... [ERROR] styles.py:308 Error processing font VL-Gothic-Regul
+   ar: too many values to unpack
+   [ERROR] styles.py:309 Registering VL-Gothic-Regular.ttf as Helvetica alias
+   done
+

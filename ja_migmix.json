@@ -1,0 +1,32 @@
+{
+    "embeddedFonts" :
+    [[
+        "MigMix-1P-bold.ttf",
+        "MigMix-1P-regular.ttf",
+        "MigMix-1M-bold.ttf",
+        "MigMix-1M-regular.ttf"
+    ]],
+    "fontsAlias" : {
+        "stdFont": "MigMix-1P-regular",
+        "stdBold": "MigMix-1P-bold",
+        "stdItalic": "MigMix-1P-regular",
+        "stdBoldItalic": "MigMix-1P-bold",
+        "stdSans": "MigMix-1P-regular",
+        "stdSansBold": "MigMix-1P-bold",
+        "stdSansItalic": "MigMix-1P-regular",
+        "stdSansBoldItalic": "MigMix-1P-bold",
+        "stdMono": "MigMix-1M-regular",
+        "stdMonoItalic": "MigMix-1M-regular",
+        "stdMonoBold": "MigMix-1M-bold",
+        "stdMonoBoldItalic": "MigMix-1M-bold",
+        "stdSerif": "MigMix-1P-regular"
+    },
+    "styles" : [
+        ["base" , {
+            "wordWrap": "CJK"
+        }],
+        ["literal" , {
+            "wordWrap": "None"
+        }]
+     ]
+ }
