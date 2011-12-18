@@ -1,0 +1,152 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>blockdiagの表示も出来るよ!! &mdash; sandbox v1 documentation</title>
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="sandbox v1 documentation" href="index.html" />
+    <link rel="next" title="メモ：Windowsでsphinxからpdf作ってみよう" href="51639558.html" />
+    <link rel="prev" title="SphinxでWinHelp形式(.chm)ファイルを作成" href="sph_winhelp.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="51639558.html" title="メモ：Windowsでsphinxからpdf作ってみよう"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="sph_winhelp.html" title="SphinxでWinHelp形式(.chm)ファイルを作成"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">sandbox v1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="blockdiag">
+<h1>blockdiagの表示も出来るよ!!<a class="headerlink" href="#blockdiag" title="Permalink to this headline">¶</a></h1>
+<p>インタラクティブなblockdiagもあるよ。</p>
+<blockquote>
+<div><a class="reference external" href="http://interactive.blockdiag.com/">http://interactive.blockdiag.com/</a></div></blockquote>
+<p>こんな画が書けるよ!!</p>
+<p class="blockdiag">
+<img src="_images/blockdiag-8e0c7aab89c356935630ef2501ec6f5658bf087c.png" alt="diagram {
+   // Set labels to nodes.
+   A [label = &quot;Sphinx&quot;];
+   B [label = &quot;blockdiag&quot;];
+   C [label = &quot;とかとか&quot;];
+
+   // Set labels to edges. (short text only)
+   A -&gt; C ;
+   B -&gt; C
+}" width="448" height="216" />
+</p>
+<div class="section" id="tips-for-win">
+<h2>Tips for win<a class="headerlink" href="#tips-for-win" title="Permalink to this headline">¶</a></h2>
+<p>conf.py にフォントファイルのパスを追記。</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># Fontpath for blockdiag (truetype font)</span>
+<span class="n">blockdiag_fontpath</span> <span class="o">=</span> <span class="s">r&#39;c:\usr\fonts\MigMix-1P-bold.ttf&#39;</span>
+
+<span class="c"># Fontpath for blockdiag (truetype font)</span>
+<span class="n">nwdiag_fontpath</span> <span class="o">=</span> <span class="s">r&#39;c:\usr\fonts\MigMix-1P-bold.ttf&#39;</span>
+</pre></div>
+</div>
+<p>フォントファイルは今回MigMixを使いました。</p>
+<blockquote>
+<div><a class="reference external" href="http://mix-mplus-ipa.sourceforge.jp/migmix/">http://mix-mplus-ipa.sourceforge.jp/migmix/</a></div></blockquote>
+<p>Python Imaging Library (PIL)サイトのWindowsのバイナリを
+インストールして使う場合には、バージョン 1.1.6 を選びましょう。
+FreeType2サポートが1.1.7には組み込まれていないとか。</p>
+<blockquote>
+<div><a class="reference external" href="http://www.pythonware.com/products/pil/">http://www.pythonware.com/products/pil/</a></div></blockquote>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">blockdiagの表示も出来るよ!!</a><ul>
+<li><a class="reference internal" href="#tips-for-win">Tips for win</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="sph_winhelp.html"
+                        title="previous chapter">SphinxでWinHelp形式(.chm)ファイルを作成</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="51639558.html"
+                        title="next chapter">メモ：Windowsでsphinxからpdf作ってみよう</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/blockdiag.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="51639558.html" title="メモ：Windowsでsphinxからpdf作ってみよう"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="sph_winhelp.html" title="SphinxでWinHelp形式(.chm)ファイルを作成"
+             >previous</a> |</li>
+        <li><a href="index.html">sandbox v1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2010, mitsuda.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+    </div>
+  </body>
+</html>

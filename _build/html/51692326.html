@@ -1,0 +1,177 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Sphinxで日本語を含むWindowsヘルプを作成するのに大変だった件。 &mdash; sandbox v1 documentation</title>
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="sandbox v1 documentation" href="index.html" />
+    <link rel="next" title="Blender 2.58" href="indexhtmlj.html" />
+    <link rel="prev" title="テキストから簡単にPDFを作ってみよう(reStructuredText)" href="51652145.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="indexhtmlj.html" title="Blender 2.58"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="51652145.html" title="テキストから簡単にPDFを作ってみよう(reStructuredText)"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">sandbox v1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="sphinxwindows">
+<h1>Sphinxで日本語を含むWindowsヘルプを作成するのに大変だった件。<a class="headerlink" href="#sphinxwindows" title="Permalink to this headline">¶</a></h1>
+<blockquote>
+<div><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field"><th class="field-name">URL:</th><td class="field-body"><a class="reference external" href="http://blog.livedoor.jp/lab1092/archives/51692326.html">http://blog.livedoor.jp/lab1092/archives/51692326.html</a></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>まだきちんと内容の検証なども出来ていないけれど、とりあえずSphinxから.chm作成の際の目次と検索の文字化けについて対処できたっ <em>ぽい</em> のでー。</p>
+<blockquote>
+<div>出力フォーマット: HTML( <em>Windows HTMLヘルプも含む</em> )、LaTeX(印刷可能なPDF)、manページ、プレーンテキスト ...</div></blockquote>
+<p>この文言が目に入らなかったら、某所のWebサーバーがIISからTomcatにならなかったら手を出してはいなかったかもしれませんｗｗｗ。</p>
+<p>どちらにしろ、Windows環境なので、大きなファイルを１つどこかに置いておいてもいいかな、と。</p>
+<p>この時点でSphinxからHTMLとPDFに変換する、ということは自身で出来る状態になっていたので、</p>
+<blockquote>
+<div>make htmlhelp</div></blockquote>
+<p>で.chmファイル作れるのかと期待していたわけですよ。そんなことはまったく無かったんですね。.chm形式のファイルを作るために「コンパイル」という作業がさらに必要なんですね。Sphinxは元ファイルとインデックスを生成するのみ。</p>
+<p>それがわかったので、ここはgoogle先生に。こんな感じで検索してました。</p>
+<blockquote>
+<div>検索 - &#8220;Windows Help コンパイル chm&#8221;</div></blockquote>
+<p>そしてこことか、こことか見て、「ああ、&#8221;HTML Help Workshop&#8221;っていうツールが必要なんだな」ということがわかりました(ツール単体はこちらから入手可能)。</p>
+<p>もちろん、HTML Help Workshopをセットアップして、.chmファイルの作成をして、目次を見てみると日本語の部分が見事に文字化けしていました。</p>
+<p>まあ、.chmファイル作成の際に文字化けする、というのは調査の過程でプロジェクトのフォント設定がどうこう、というものがあったので、HTML Help Workshopの画面から、それぞれのフォント設定を&#8221;MS UIゴシック、日本語&#8221;として設定を変更および保存。</p>
+<p>そしてコンパイルして出来た.chmファイルを開くと…目次のツリーの項目が見事に文字化けしていました。少しファイルを眺めた結果、</p>
+<blockquote>
+<div>_buildhtmlhelphelpfile.hhc</div></blockquote>
+<p>のインデックスがどうやら文字化けの原因になっていそうだったので、&#8221;&amp;#xxxxxx;&#8221;になっている部分をShift-JISコードにするためのコードを書いてみたり。</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">re</span>
+
+<span class="n">p</span><span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s">r&#39;\&amp;\#(\d*)\;&#39;</span><span class="p">)</span>
+
+<span class="c"># def</span>
+<span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">match</span><span class="p">):</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">match</span><span class="o">.</span><span class="n">groups</span><span class="p">(</span><span class="mi">0</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="nb">unichr</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s">&#39;shift-jis&#39;</span><span class="p">)</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="n">s</span><span class="o">=</span> <span class="s">&quot;?&quot;</span>
+    <span class="k">return</span> <span class="n">s</span>
+
+<span class="c"># これをくるくる回すかんじ(&quot;line&quot;が入力文字列,foが出力ファイル)</span>
+<span class="k">print</span> <span class="o">&gt;&gt;</span><span class="n">fo</span><span class="p">,</span><span class="n">p</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">foo</span><span class="p">,</span><span class="n">line</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>とりあえずこの時点で変換したあとのhelpfile.hhcを含めたファイルから.chmファイルを作成、目次を確認してみて、文字化けが無いことを確認できました。やった。</p>
+<p>と喜んだのもつかの間、検索機能で検索結果リストに表示される日本語文字列がことごとく…。
+HTMLファイルすべて、上と同じ処理+metaヘッダのエンコード指定の箇所を変更することに。</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;content=&quot;text/html; charset=iso8859_1&quot;&#39;</span><span class="p">,</span><span class="s">&#39;content=&quot;text/html; charset=shift-jis&quot;&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>まとめると、</p>
+<blockquote>
+<div><ul class="simple">
+<li>Sphinxで&#8221;make htmlhelp&#8221;でWindowsヘルプ作成のための種となるファイル群が生成される。</li>
+<li>.chmのファイルにするには、&#8221;HTML Help Workshop&#8221;というツールでコンパイルが必要。</li>
+<li>用意するHTMLファイルおよび目次ファイルは日本語の場合SJISの模様。</li>
+<li>Sphinxが吐き出したのは&#8221;iso8859_1&#8221;でエンコードされたファイル。</li>
+<li>WindowsHelpのコンパイル時にエンコードをSJISにそろえる必要あり(上記のような変換が必要)。</li>
+<li>HTML Help Workshopでプロジェクトファイルを開いたあとに、各所のフォント設定を行って、日本語フォントを指定しておくほうが良い?</li>
+</ul>
+</div></blockquote>
+<p>という感じでしょうかね。</p>
+<p>まあ、&#8221;conf.py&#8221;に Windowsヘルプ生成時の言語オプションとか指定できてもよさそうなんだけど、調べるの面倒なので、上記のような方法で。</p>
+<p>もちろん、&#8221;.. blockdiag ::&#8221;な表記のものもちゃーんと表示されてますよっと。</p>
+<p>とまあ、ここまできて梅.pyを思い出してみると…あっ。ということでおしまい。</p>
+<p>[EDIT]上記では根本的に対処できてませんｗｗｗ</p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="51652145.html"
+                        title="previous chapter">テキストから簡単にPDFを作ってみよう(reStructuredText)</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="indexhtmlj.html"
+                        title="next chapter">Blender 2.58</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/51692326.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="indexhtmlj.html" title="Blender 2.58"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="51652145.html" title="テキストから簡単にPDFを作ってみよう(reStructuredText)"
+             >previous</a> |</li>
+        <li><a href="index.html">sandbox v1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2010, mitsuda.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+    </div>
+  </body>
+</html>

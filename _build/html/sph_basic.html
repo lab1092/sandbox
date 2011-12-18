@@ -1,0 +1,167 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Sphinx Basic &mdash; sandbox v1 documentation</title>
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="sandbox v1 documentation" href="index.html" />
+    <link rel="next" title="SphinxでWinHelp形式(.chm)ファイルを作成" href="sph_winhelp.html" />
+    <link rel="prev" title="C++シンタックスハイライト出力" href="hellocpp.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="sph_winhelp.html" title="SphinxでWinHelp形式(.chm)ファイルを作成"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="hellocpp.html" title="C++シンタックスハイライト出力"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">sandbox v1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="sphinx-basic">
+<h1>Sphinx Basic<a class="headerlink" href="#sphinx-basic" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>閲覧する人<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>Previous topic,Next topicで読み進めるか、TOCリストから目的のArticleへどうぞ。</p>
+<blockquote>
+<div><ul class="simple">
+<li>英単語であれば検索も出来るようなので検索ボックスに何か入力してみてください。</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="id2">
+<h2>文書を作成する人<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>このドキュメントはSphinxを使用して作成しています。
+作成には Python 2.6.x と いくつかのパッケージが必要です。</p>
+<div class="section" id="id3">
+<h3>インストールする<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>ちなみに2.6.5 環境ですね。</p>
+<p>Pyhtonのインストールが完了したら、以下の環境変数を設定。</p>
+<blockquote>
+<div><p>PYTHONPATH= C:\PYTHON26</p>
+<p>PATH= C:\PYTHON26;C:\PYTHON26\Scripts</p>
+</div></blockquote>
+<p>Sphinx は easy_install で依存するパッケージも含めてインストールが可能です(easy_installでPyPiから正常にダウンロードできる場合)。</p>
+</div>
+<div class="section" id="sphinx">
+<h3>Sphinxプロジェクトを作成する<a class="headerlink" href="#sphinx" title="Permalink to this headline">¶</a></h3>
+<p>Sphinxプロジェクトを新規作成する場合には以下URLを参考に。</p>
+<blockquote>
+<div><a class="reference external" href="http://sphinx.shibu.jp/">http://sphinx.shibu.jp/</a></div></blockquote>
+</div>
+<div class="section" id="make">
+<h3>文書をMakeする<a class="headerlink" href="#make" title="Permalink to this headline">¶</a></h3>
+<p>reStructuredText(reST)フォーマットで文書を記述します。その後、プロジェクトをmakeしてhtml等の形式に変換します。</p>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>本プロジェクトの管理について<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>ちなみに、元ファイル(<a href="#id5"><span class="problematic" id="id6">*</span></a>.rst)や支援スクリプト等はローカルPCの Git にてバージョン管理中。</p>
+<blockquote>
+<div><ul class="simple">
+<li><a class="reference external" href="http://git-scm.com/">http://git-scm.com/</a></li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Sphinx Basic</a><ul>
+<li><a class="reference internal" href="#id1">閲覧する人</a></li>
+<li><a class="reference internal" href="#id2">文書を作成する人</a><ul>
+<li><a class="reference internal" href="#id3">インストールする</a></li>
+<li><a class="reference internal" href="#sphinx">Sphinxプロジェクトを作成する</a></li>
+<li><a class="reference internal" href="#make">文書をMakeする</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id4">本プロジェクトの管理について</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="hellocpp.html"
+                        title="previous chapter">C++シンタックスハイライト出力</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="sph_winhelp.html"
+                        title="next chapter">SphinxでWinHelp形式(.chm)ファイルを作成</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/sph_basic.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" size="18" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="sph_winhelp.html" title="SphinxでWinHelp形式(.chm)ファイルを作成"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="hellocpp.html" title="C++シンタックスハイライト出力"
+             >previous</a> |</li>
+        <li><a href="index.html">sandbox v1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2010, mitsuda.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.7.
+    </div>
+  </body>
+</html>
