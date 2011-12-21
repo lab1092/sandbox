@@ -1,8 +1,19 @@
-﻿
+
 SeleniumによるテストケースをreSTで。
 =====================================
 
-HTMLでテストケースなんて書いてられるかっ、ということで。
+HTMLでテストケースだって?
+--------------------------
+
+HTMLでテストケースなんて書いてられるかっ、ということでreSTで書いてみることにしました。
+1ファイルがテストスイートに相当します。
+
+実行オプションなど
+-------------------
+
+以下の記載でオプションを指定することが出来ます。``SERVERDIR``などを適切に
+指定してください。
+
 
    :OS: Windows
    :SELENIUM: C:\\usr\\proj\\seltest\\selenium-server-standalone-2.15.0.jar
@@ -13,6 +24,13 @@ HTMLでテストケースなんて書いてられるかっ、ということで�
    :TIMEOUT: 60000
    :SERVERDIR: C:\\usr\\proj\\seltest
    :BAT: googletest.bat
+
+
+実行リスト
+----------
+
+実行リストにテストケース名を追加します。そして、それに対応するテーブルを以下に追加すると
+いいですよ。
 
 
 .. list-table :: 
@@ -26,7 +44,7 @@ HTMLでテストケースなんて書いてられるかっ、ということで�
 blenderを検索する
 -----------------
 
-Googleに接続して、"blender"を検索します。"
+Googleに接続して、"blender"を検索します。
 
 .. table ::
    :class: testcase
@@ -49,7 +67,7 @@ Googleに接続して、"blender"を検索します。"
 sphinxを検索する
 ----------------
 
-Googleに接続して、"sphinx"を検索します。"
+Googleに接続して、"sphinx"を検索します。
 
 .. table ::
    :class: testcase
