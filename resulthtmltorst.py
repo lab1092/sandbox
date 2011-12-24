@@ -121,14 +121,15 @@ def resulthtmltorst( file ):
             for y in tr:
                 if f == 0 and 'title' in y['class']:
 
+
+                    
+                    td = y.find('td')
+                    print >>frest,''
+                    print >>frest,td.text+'.html'
+                    print >>frest,'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~'
                     print >>frest,''
                     print >>frest,'**'+y['class'].split(' ')[1]+'**'
                     print >>frest,''
-                    
-                    td = y.find('td')
-                    print >>frest,td.text+'.html'
-                    print >>frest,'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~'
-                    
                     print >>frest,'.. list-table::'
                     print >>frest,''
 
