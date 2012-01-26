@@ -6,11 +6,7 @@ Contents:
 .. toctree::
    :maxdepth: 1
 
-<<<<<<< HEAD
    Concrete5_5
-=======
-   concrete5_5
->>>>>>> origin/master
    Concrete5_4
    sample
    hellocpp
