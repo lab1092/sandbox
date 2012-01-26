@@ -6,6 +6,7 @@ Contents:
 .. toctree::
    :maxdepth: 1
 
+   Concrete5_5
    Concrete5_4
    sample
    hellocpp
