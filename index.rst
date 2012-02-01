@@ -6,6 +6,7 @@ Contents:
 .. toctree::
    :maxdepth: 1
 
+   golang_kobe1
    concrete5_5
    Concrete5_4
    sample
