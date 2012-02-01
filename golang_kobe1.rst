@@ -97,7 +97,7 @@ Go言語とは
 
 
 
-.. code-block:: none
+.. code-block:: go
 
    package main
    
