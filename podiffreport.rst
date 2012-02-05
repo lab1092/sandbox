@@ -15,9 +15,14 @@ podiffreport.py
    podiffreport("ja.po","ja_2012_0106.po","result.tsv","tsvwithmark")
 
 
+* "tsvwithmark" を指定すると以下の内容をTSV形式(タブ区切りテキスト)で出力します。
 
-.. line-table::
-   :width: 10 90
+* "" を指定するとAからF列までをTSV形式(タブ区切りテキスト)で出力します。
+  このとき、未使用とマークされたものは出力しません。
+  なお、この形式で出力し、potsv2rst.pyを使ってreSTファイル群を生成可能です。
+
+.. list-table::
+   :widths: 10 90
 
    * - A列
      - 比較の状態を示します。
@@ -59,16 +64,15 @@ podiffreport.py
    * ファイルはあるものとして動作します。
 
 
-ソースコード
+ソースコード(podiffreport.py)
 ------------------------------
 
 .. literalinclude:: podiffreport.py
 
 
-ToDo
-----------
 
-やるべきこと：
+ソースコード(potsv2rst.py)
+------------------------------
 
-   * TSVファイル出力とか
-   * reST出力
+.. literalinclude:: potsv2rst.py
+
