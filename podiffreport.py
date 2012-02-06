@@ -134,7 +134,7 @@ def readpofile(name):
         else:
             flg =0
             
-            # fuzzy mark( ad hook )
+            # fuzzy mark( ad hoc )
             if line.startswith('#,'):
                 if 'fuzzy' in line:
                     fuzzyflg = 'f'
