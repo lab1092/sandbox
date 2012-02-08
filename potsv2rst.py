@@ -44,6 +44,10 @@ def filerst(msg,cnt):
     print >> fo, "==========================="
     print >> fo, ""
     print >> fo, ""
+    print >> fo, "   * *[+]* のしるしは新規追加語を示します・"
+    print >> fo, "   * *fuzzy* は新しい語にfuzzyフラグが付いていることを示します。"
+    print >> fo, "   * *[Empty]* はから文字を示します。"
+    print >> fo, ""
     print >> fo, msg
    
     fo.close()
@@ -76,7 +80,7 @@ def writetorst(flag,num,linenum,msgid,msgstr,fuzzy):
     buf.append('   ::\n')
 
     if msgid == "":
-        msgid = "[Enpty]"
+        msgid = "[Empty]"
 
     buf.append('      '+ msgid)
     buf.append('')
