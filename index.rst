@@ -6,6 +6,7 @@ Contents:
 .. toctree::
    :maxdepth: 1
 
+   concrete5_6
    podiffreport
    golang_kobe1
    concrete5_5

@@ -104,7 +104,11 @@ def resulthtmltorst( file ):
 
                     td = y.findAll('td')
                     print >>frest,'   * - ' , td[0].text
-                    print >>frest,'     - ' , y['class'].strip()
+                    if y.has_key('class'):
+                        print >>frest,'     - ' , y['class'].strip()
+                    else:
+                        print >>frest,'     - (None)'
+
 
         
         # Case Results
@@ -140,7 +144,11 @@ def resulthtmltorst( file ):
                     print >>frest,'   * - ' , td[0].text
                     print >>frest,'     - ' , td[1].text
                     print >>frest,'     - ' , td[2].text
-                    print >>frest,'     - ' , y['class'].strip()
+                    if y.has_key('class'):
+                        print >>frest,'     - ' , y['class'].strip()
+                    else:
+                        print >>frest,'     - (None)'
+
 
 
         c = c+1

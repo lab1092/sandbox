@@ -44,7 +44,7 @@ http:// はここ、https:// はここ、というサイトの場合は対応が
    * http://concrete5-japan.org/community/forums/development/post-755/
 
 
-「ページ属性」とは、Wordpressの「ページ属性」に相当。PHPの知識は必要ではあるものの設定は可能。
+「ページ属性」とは、Wordpressの「カスタムフィールド」に相当。PHPの知識は必要ではあるものの設定は可能。
 
 **デザイン**
 
