@@ -281,8 +281,10 @@ app.yaml(変更後)::
 LT
 --
 
-   GoogleApppEngine + HTML5 で シーケンサー作ってみました。
+GoogleApppEngine + HTML5 で シーケンサー作ってみました。
   
-   動作環境は…ちょろめさん限定らしいです。
+動作環境は…ちょろめさん限定らしいです。
+   
+      Web Audio API
 
 
