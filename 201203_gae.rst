@@ -121,10 +121,15 @@ http://code.google.com/intl/ja/appengine/docs/java/gettingstarted/
    * 静的ファイルの使用
    * アプリケーションのアップロード
 
+Google Plugin for Eclipse の使用
 
+http://code.google.com/intl/ja/appengine/docs/java/tools/eclipse.html
 
 Eclipse IDE for Java EE Developers
 
+
+
+*データアクセス*
 
    * JDO
    * JPA
@@ -134,6 +139,21 @@ Eclipse IDE for Java EE Developers
 *ソースコードについて解説中*
 
   エンティティのリストをうんたら…
+
+Python
+-------
+
+テレビ会議の向こう側から講師様が！！
+
+   「appengineのSDKは(Linuxでは)ZIPです」「Macは違う拡張子だったよ…」
+
+   「WgetでZIPファイルGETしてください」「Mac wget 入ってない」
+
+スライドにてコーディング解説(SphinxのS6)スライドだよ！！　
+
+   * 最初のGAEを使う準備
+   * GAEのDB Entity定義をする
+   * リクエストに応じる処理
 
 
 Go Lang
