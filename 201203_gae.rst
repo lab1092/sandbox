@@ -96,9 +96,6 @@ GAEで使いたい言語は？
      - 1
 
 
-
-
-
 Java
 -----
 
@@ -109,13 +106,41 @@ http://code.google.com/intl/ja/appengine/
 
 http://www.eclipse.org/downloads/
 
-Eclipse IDE for Java EE Developers
 
+スタート ガイド: Java
+
+http://code.google.com/intl/ja/appengine/docs/java/gettingstarted/
+
+
+   * はじめに
+   * Java SDK のインストール
+   * プロジェクトの作成
+   * ユーザー サービスの使用
+   * JSP の使用
+   * JDO を利用したデータストアの使用
+   * 静的ファイルの使用
+   * アプリケーションのアップロード
+
+
+
+Eclipse IDE for Java EE Developers
 
 
    * JDO
    * JPA
    * LowLevwl
+
+
+*ソースコードについて解説中*
+
+  エンティティのリストをうんたら…
+
+
+Go Lang
+--------
+
+
+
 
 
 
