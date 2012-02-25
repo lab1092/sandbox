@@ -64,13 +64,58 @@
 
 
 
+自己紹介タイム
+---------------
+
 GAE
 ====
 
+http://code.google.com/intl/ja-JP/appengine/downloads.html
+
+
+**アンケート**
+
+GAE使ったことありますか？
+
+.. list-table::
+
+   * - 使ったことある 
+     - 9名
+   * - 使ったこと無い
+     - 3名
+
+GAEで使いたい言語は？
+
+.. list-table::
+       
+   * - Java
+     - 10(重複１名)
+   * - Python
+     - 2(重複１名)
+   * - Go
+     - 1
 
 
 
 
 
+Java
+-----
 
-https://docs.google.com/spreadsheet/viewform?formkey=dG5FcTBRWUNEQ3ZlN0NrQXpTQ0VtWlE6MA#gid=0
+環境を整えましょう
+
+google app engine でぐぐる
+http://code.google.com/intl/ja/appengine/
+
+http://www.eclipse.org/downloads/
+
+Eclipse IDE for Java EE Developers
+
+
+
+   * JDO
+   * JPA
+   * LowLevwl
+
+
+
