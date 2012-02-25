@@ -14,13 +14,20 @@
    [Kobe GTUG] GAEをはじめよう〜今更って言わないで〜 [2/25(土) 14:00〜18:00 堂島]
    Google App Engineの勉強会を行います。
 
-   「GAEをはじめよう！」と思っている初心者の人に参考にしていただけるよう、GAEで使えるPython/Go/Javaで簡単なサンプルを作成して、コーディング方法がどのように変わるのかを紹介します。
+   「GAEをはじめよう！」と思っている初心者の人に参考にしていただけるよう、
+   GAEで使えるPython/Go/Javaで簡単なサンプルを作成して、コーディング方法が
+   どのように変わるのかを紹介します。
 
-   静的HTMLを配置して動かしてみたいんだけど・・・という方にも参加いただける内容と思いますので、技術レベルを気にせず参加いただければと思います。小規模の勉強会なので気軽に参加してください。
+   静的HTMLを配置して動かしてみたいんだけど・・・という方にも参加いただける
+   内容と思いますので、技術レベルを気にせず参加いただければと思います。小規
+   模の勉強会なので気軽に参加してください。
 
-   ※GAE/Go はMacとLinuxの環境しか提供されていません。Windowsの人は、仮想環境のLinuxなりを用意してください。もしくは実習無しでソース眺めていただくだけでも構いません。
+   ※GAE/Go はMacとLinuxの環境しか提供されていません。Windowsの人は、仮想環
+   境のLinuxなりを用意してください。もしくは実習無しでソース眺めていただく
+   だけでも構いません。
 
-   下記フォームから申し込みしていただければ参加登録完了です。（返信メールはありません。）
+   下記フォームから申し込みしていただければ参加登録完了です。（返信メールは
+   ありません。）
 
    ◎日時
    2012年2月25日 土曜日 14:00〜18:00
@@ -61,7 +68,6 @@
 ======
 
 **神戸GTUGって?**
-
 
 
 自己紹介タイム
@@ -174,16 +180,20 @@ Go Lang
 
 **Google App Engine SDKインストール**
 
-``~/.bash_profile``にSDKダウンロードしてインストール
+~/.bash_profile にSDKダウンロードしてインストール
 
-   .bash_profileに::
+   .bash_profileに
+   
+   .. code-block:: bash
    
       export PATH=$HOME/google_appengine:$PATH
 
 どうやらMacのホームディレクトリには .bash_profile ファイルそのものが無かったのでファイルを
 作成する。
    
-   ターミナル上で::
+   ターミナル上で
+
+   .. code-block:: bash
    
       source ~/.bash_profile
 
@@ -191,7 +201,7 @@ Go Lang
 
 作業フォルダを作成 $HOME/gaegowork
    
-::
+.. code-block:: bash
 
    cd ~
    mkdir gaegowork
@@ -204,7 +214,9 @@ Go Lang
 
 myapp フォルダの下に app.yaml ファイルを作る。
 
-app.yaml::
+app.yaml
+
+.. code-block:: yaml
 
    application: gaegosample
    version: 1
@@ -217,7 +229,9 @@ app.yaml::
 
 gaegosampleフォルダの下にhello.go
 
-hello.go::
+hello.go
+
+.. code-block:: go
 
    package gaegosample
    import (
@@ -234,6 +248,7 @@ hello.go::
 
 
 何かエラー::
+
    mbp-tmitsuda:gaegowork mitsuda$ dev_appserver.py myapp/
    WARNING  2012-02-25 08:28:21,754 urlfetch_stub.py:111] No ssl package found. urlfetch will not be able to validate SSL certificates.
    WARNING  2012-02-25 08:28:22,360 rdbms_mysqldb.py:94] The rdbms API is not available because the MySQLdb library could not be loaded.
@@ -258,7 +273,9 @@ hello.go::
      in "myapp/app.yaml", line 8, column 2
    mbp-tmitsuda:gaegowork mitsuda$ 
 
-app.yaml(変更後)::
+app.yaml(変更後)
+
+.. code-block:: yaml
 
    application: gaegosample
    version: 1
