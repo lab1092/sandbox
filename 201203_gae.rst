@@ -155,12 +155,35 @@ Python
    * GAEのDB Entity定義をする
    * リクエストに応じる処理
 
+::
+
+   きゃーしもださーん
+
+単語帳作ったよ
+
+   単語帳データアップロード時に「バルクアップロード」
+
+
+
 
 Go Lang
 --------
 
 
+アンドロイドアプリの、A・文庫でApp Engineを使っているところがあるらしい。今回はGo。
 
+**Google App Engine SDKインストール**
 
+   .bash_profileに::
+   
+      export PATH$HOME/google_appengine:$PATH
 
+どうやらMacのホームディレクトリには .bash_profile ファイルそのものが無かったのでファイルを
+作成する。
+   
+   ターミナル上で::
+   
+      source ~/.bash_profile
+
+   
 
