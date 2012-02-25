@@ -174,9 +174,11 @@ Go Lang
 
 **Google App Engine SDKインストール**
 
+``~/.bash_profile``にSDKダウンロードしてインストール
+
    .bash_profileに::
    
-      export PATH$HOME/google_appengine:$PATH
+      export PATH=$HOME/google_appengine:$PATH
 
 どうやらMacのホームディレクトリには .bash_profile ファイルそのものが無かったのでファイルを
 作成する。
@@ -185,5 +187,102 @@ Go Lang
    
       source ~/.bash_profile
 
+*フォルダの作成*
+
+作業フォルダを作成 $HOME/gaegowork
    
+::
+
+   cd ~
+   mkdir gaegowork
+   cd gaegowork   
+
+   mkdir myapp
+   cd myapp
+
+   mkdir gaegosample
+
+myapp フォルダの下に app.yaml ファイルを作る。
+
+app.yaml::
+
+   application: gaegosample
+   version: 1
+   runtime: go
+   api_version: 3
+
+   handlers:
+   - url: /.*
+    script: _go_app
+
+gaegosampleフォルダの下にhello.go
+
+hello.go::
+
+   package gaegosample
+   import (
+       "fmt"
+       "http"
+   )
+   func init() {
+       http.HandleFunc("/", handler)
+   }
+   func handler(w http.ResponseWriter, r *http.Request) {
+       w.Header().Set("Content-Type", "text/plain; charset=utf-8")
+       w.Write([]byte("Hello, GAE/Go!"))
+   }
+
+
+何かエラー::
+   mbp-tmitsuda:gaegowork mitsuda$ dev_appserver.py myapp/
+   WARNING  2012-02-25 08:28:21,754 urlfetch_stub.py:111] No ssl package found. urlfetch will not be able to validate SSL certificates.
+   WARNING  2012-02-25 08:28:22,360 rdbms_mysqldb.py:94] The rdbms API is not available because the MySQLdb library could not be loaded.
+   ERROR    2012-02-25 08:28:22,968 dev_appserver_main.py:581] Fatal error when loading application configuration:
+   Invalid object:
+   Unknown url handler type.
+   <URLMap 
+       auth_fail_action=redirect 
+       static_dir=None 
+       secure=default 
+       script=None 
+       url=/.* 
+       static_files=None 
+       upload=None 
+       api_endpoint=None 
+       expiration=None 
+       position=None 
+       login=optional 
+       mime_type=None 
+       require_matching_file=None
+       >
+     in "myapp/app.yaml", line 8, column 2
+   mbp-tmitsuda:gaegowork mitsuda$ 
+
+app.yaml(変更後)::
+
+   application: gaegosample
+   version: 1
+   runtime: go
+   api_version: 3
+
+   handlers:
+   - url: /.*
+     script: _go_app
+
+
+まとめ
+------
+
+   * どれかの言語で実行できたはず
+   * 3つの言語をこの時間で行うのはきついかなー
+   * 環境設定ではまるよねー
+   * まったり(時間をかけて)やりたいよねー
+
+LT
+--
+
+   GoogleApppEngine + HTML5 で シーケンサー作ってみました。
+  
+   動作環境は…ちょろめさん限定らしいです。
+
 
