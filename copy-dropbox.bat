@@ -1,0 +1,1 @@
+xcopy _build\html\*.* "%USERPROFILE%\Documents\My Dropbox\Public\" /A /Y
