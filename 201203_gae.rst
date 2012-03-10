@@ -1,0 +1,307 @@
+===========================
+[Kobe GTUG] GAEをはじめよう
+===========================
+
+  :主催: 神戸GTUG https://groups.google.com/group/kobe-gtug/
+  :開催日時: 2012/2/25 14:00-
+  :URL: https://docs.google.com/spreadsheet/viewform?formkey=dG5FcTBRWUNEQ3ZlN0NrQXpTQ0VtWlE6MA#gid=0
+
+告知ページのコピペ
+==================
+
+::
+
+   [Kobe GTUG] GAEをはじめよう〜今更って言わないで〜 [2/25(土) 14:00〜18:00 堂島]
+   Google App Engineの勉強会を行います。
+
+   「GAEをはじめよう！」と思っている初心者の人に参考にしていただけるよう、
+   GAEで使えるPython/Go/Javaで簡単なサンプルを作成して、コーディング方法が
+   どのように変わるのかを紹介します。
+
+   静的HTMLを配置して動かしてみたいんだけど・・・という方にも参加いただける
+   内容と思いますので、技術レベルを気にせず参加いただければと思います。小規
+   模の勉強会なので気軽に参加してください。
+
+   ※GAE/Go はMacとLinuxの環境しか提供されていません。Windowsの人は、仮想環
+   境のLinuxなりを用意してください。もしくは実習無しでソース眺めていただく
+   だけでも構いません。
+
+   下記フォームから申し込みしていただければ参加登録完了です。（返信メールは
+   ありません。）
+
+   ◎日時
+   2012年2月25日 土曜日 14:00〜18:00
+
+   ◎参加人数
+   15名
+
+   ◎アジェンダ
+   10分　神戸GTUGのご紹介
+   50分　JavaでGAE
+   10分　休憩
+   50分　PythonでGAE
+   10分　休憩
+   50分　GoでGAE
+   10分　休憩
+   30分　クールダウン、QA、雑談
+   10分　お片づけ
+
+   ◎場所
+   サントリーアネックスビル10F
+   〒530-8204　大阪市北区堂島2-1-5
+   http://www.suntory.co.jp/company/map/honsha.html
+   　※13:45に入り口に集合してください
+   　※遅れてこられる方は入り口に貼りつけている電話番号に電話してください
+
+   ◎注意事項
+   Webブラウザの動くノートPC（Mac，Linux，Windows）とネット接続環境をご用意ください。
+
+   ◎参加想定スキル
+   GAEに対する興味があること。
+
+   ◎その他
+   勉強会への質問は神戸GTUGのMLでお願いします。
+   https://groups.google.com/group/kobe-gtug/
+
+
+最初に
+======
+
+**神戸GTUGって?**
+
+
+自己紹介タイム
+---------------
+
+GAE
+====
+
+http://code.google.com/intl/ja-JP/appengine/downloads.html
+
+
+**アンケート**
+
+GAE使ったことありますか？
+
+.. list-table::
+
+   * - 使ったことある 
+     - 9名
+   * - 使ったこと無い
+     - 3名
+
+GAEで使いたい言語は？
+
+.. list-table::
+       
+   * - Java
+     - 10(重複１名)
+   * - Python
+     - 2(重複１名)
+   * - Go
+     - 1
+
+
+Java
+-----
+
+環境を整えましょう
+
+google app engine でぐぐる
+http://code.google.com/intl/ja/appengine/
+
+http://www.eclipse.org/downloads/
+
+
+スタート ガイド: Java
+
+http://code.google.com/intl/ja/appengine/docs/java/gettingstarted/
+
+
+   * はじめに
+   * Java SDK のインストール
+   * プロジェクトの作成
+   * ユーザー サービスの使用
+   * JSP の使用
+   * JDO を利用したデータストアの使用
+   * 静的ファイルの使用
+   * アプリケーションのアップロード
+
+Google Plugin for Eclipse の使用
+
+http://code.google.com/intl/ja/appengine/docs/java/tools/eclipse.html
+
+Eclipse IDE for Java EE Developers
+
+
+
+*データアクセス*
+
+   * JDO
+   * JPA
+   * LowLevwl
+
+
+*ソースコードについて解説中*
+
+  エンティティのリストをうんたら…
+
+Python
+-------
+
+テレビ会議の向こう側から講師様が！！
+
+   「appengineのSDKは(Linuxでは)ZIPです」「Macは違う拡張子だったよ…」
+
+   「WgetでZIPファイルGETしてください」「Mac wget 入ってない」
+
+スライドにてコーディング解説(SphinxのS6)スライドだよ！！　
+
+   * 最初のGAEを使う準備
+   * GAEのDB Entity定義をする
+   * リクエストに応じる処理
+
+::
+
+   きゃーしもださーん
+
+単語帳作ったよ
+
+   単語帳データアップロード時に「バルクアップロード」
+
+
+
+
+Go Lang
+--------
+
+
+アンドロイドアプリの、A・文庫でApp Engineを使っているところがあるらしい。今回はGo。
+
+**Google App Engine SDKインストール**
+
+~/.bash_profile にSDKダウンロードしてインストール
+
+   .bash_profileに
+   
+   .. code-block:: bash
+   
+      export PATH=$HOME/google_appengine:$PATH
+
+どうやらMacのホームディレクトリには .bash_profile ファイルそのものが無かったのでファイルを
+作成する。
+   
+   ターミナル上で
+
+   .. code-block:: bash
+   
+      source ~/.bash_profile
+
+*フォルダの作成*
+
+作業フォルダを作成 $HOME/gaegowork
+   
+.. code-block:: bash
+
+   cd ~
+   mkdir gaegowork
+   cd gaegowork   
+
+   mkdir myapp
+   cd myapp
+
+   mkdir gaegosample
+
+myapp フォルダの下に app.yaml ファイルを作る。
+
+app.yaml
+
+.. code-block:: yaml
+
+   application: gaegosample
+   version: 1
+   runtime: go
+   api_version: 3
+
+   handlers:
+   - url: /.*
+    script: _go_app
+
+gaegosampleフォルダの下にhello.go
+
+hello.go
+
+.. code-block:: go
+
+   package gaegosample
+   import (
+       "fmt"
+       "http"
+   )
+   func init() {
+       http.HandleFunc("/", handler)
+   }
+   func handler(w http.ResponseWriter, r *http.Request) {
+       w.Header().Set("Content-Type", "text/plain; charset=utf-8")
+       w.Write([]byte("Hello, GAE/Go!"))
+   }
+
+
+何かエラー::
+
+   mbp-tmitsuda:gaegowork mitsuda$ dev_appserver.py myapp/
+   WARNING  2012-02-25 08:28:21,754 urlfetch_stub.py:111] No ssl package found. urlfetch will not be able to validate SSL certificates.
+   WARNING  2012-02-25 08:28:22,360 rdbms_mysqldb.py:94] The rdbms API is not available because the MySQLdb library could not be loaded.
+   ERROR    2012-02-25 08:28:22,968 dev_appserver_main.py:581] Fatal error when loading application configuration:
+   Invalid object:
+   Unknown url handler type.
+   <URLMap 
+       auth_fail_action=redirect 
+       static_dir=None 
+       secure=default 
+       script=None 
+       url=/.* 
+       static_files=None 
+       upload=None 
+       api_endpoint=None 
+       expiration=None 
+       position=None 
+       login=optional 
+       mime_type=None 
+       require_matching_file=None
+       >
+     in "myapp/app.yaml", line 8, column 2
+   mbp-tmitsuda:gaegowork mitsuda$ 
+
+app.yaml(変更後)
+
+.. code-block:: yaml
+
+   application: gaegosample
+   version: 1
+   runtime: go
+   api_version: 3
+
+   handlers:
+   - url: /.*
+     script: _go_app
+
+
+まとめ
+------
+
+   * どれかの言語で実行できたはず
+   * 3つの言語をこの時間で行うのはきついかなー
+   * 環境設定ではまるよねー
+   * まったり(時間をかけて)やりたいよねー
+
+LT
+--
+
+GoogleApppEngine + HTML5 で シーケンサー作ってみました。
+  
+動作環境は…ちょろめさん限定らしいです。
+   
+      Web Audio API
+
+

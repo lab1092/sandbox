@@ -1,4 +1,4 @@
-﻿Welcome to sandbox's documentation!
+Welcome to sandbox's documentation!
 ===================================
 
 Contents:
@@ -6,6 +6,7 @@ Contents:
 .. toctree::
    :maxdepth: 1
 
+   201203_gae
    concrete5_6
    podiffreport
    golang_kobe1
@@ -23,6 +24,7 @@ Contents:
    indexhtmlj
    selenium_rest
    201201atnd
+   
 
 Indices and tables
 ==================
