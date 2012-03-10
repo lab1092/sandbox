@@ -6,7 +6,7 @@ rem HTML
 rem ####
 
 call make html
-xcopy _build\html\*.* "%USERPROFILE%\Documents\My Dropbox\Public\" /A /Y
+xcopy _build\html\*.* "%USERPROFILE%\Documents\My Dropbox\Public\" /A /Y /E
 
 rem HTMLHELP(.chm)
 rem ##############
@@ -30,5 +30,6 @@ rem #################
 sphinx-build -b singlehtml -c _ext -d _build/doctree . _build/singlehtml
 
 rem make PDF file to dropbox directory
-"C:\Program Files\wkhtmltopdf\wkhtmltopdf.exe" _build/singlehtml/index.html "%USERPROFILE%\Documents\My Dropbox\Public\index.pdf"
+"C:\Program Files\wkhtmltopdf\wkhtmltopdf.exe" _build/singlehtml/index.html index.pdf
+copy index.pdf "%USERPROFILE%\Documents\My Dropbox\Public\index.pdf"
 
