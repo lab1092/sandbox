@@ -16,6 +16,7 @@ Contents:
 .. toctree::
    :maxdepth: 1
 
+   201203_keynote
    pyfes_201203
    201203_gae
    concrete5_6
