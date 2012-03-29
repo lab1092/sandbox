@@ -1,0 +1,1 @@
+# -*- coding: utf-8 -*-## hello_cr.pyprint "Hello,Python!!"print u"こんにちは、ぱいそん!!"

@@ -1,0 +1,40 @@
+{#
+#}
+{% block twittertl %}
+   <hr>
+   <div align="center">
+   <script charset="utf-8" src="http://widgets.twimg.com/j/2/widget.js"></script>
+   <script>
+   new TWTR.Widget({
+     version: 2,
+     type: 'search',
+     search: 'blender lang:ja',
+     interval: 30000,
+     title: 'blender',
+     subject: 'nipponn no blender',
+     width: 200,
+     height: 300,
+     theme: {
+       shell: {
+         background: '#fc7f3c',
+         color: '#ffffff'
+    },
+       tweets: {
+         background: '#ffffff',
+         color: '#444444',
+         links: '#1985b5'
+       }
+        },
+     features: {
+       scrollbar: false,
+       loop: true,
+       live: true,
+       behavior: 'default'
+     }
+   }).render().start();
+   </script>
+   </div>
+{% endblock %}
+
+
+
