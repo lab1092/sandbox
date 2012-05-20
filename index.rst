@@ -16,6 +16,7 @@ Contents:
 .. toctree::
    :maxdepth: 1
 
+   concrete5_9
    embed_timeline
    201203_keynote
    pyfes_201203
