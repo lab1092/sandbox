@@ -16,6 +16,7 @@ Contents:
 .. toctree::
    :maxdepth: 1
 
+   201206_Sphinx_Table
    google-chart-sample_kifenq
    concrete5_9
    embed_timeline
