@@ -4,7 +4,7 @@ Welcome to sandbox's documentation!
 Topic:
 
 
-* [さいしん] :doc:`pyfes_201203`
+* :doc:`pyfes_201203`
    * `pyfesのステマ資料 <http://dl.dropbox.com/u/3864210/sphasa001/03_pyfes/index.html>`_
    * `参考資料:Sphinx朝会の資料 <http://dl.dropbox.com/u/3864210/sphasa001/part1.html>`_
   
@@ -16,6 +16,7 @@ Contents:
 .. toctree::
    :maxdepth: 1
 
+   google-chart-sample_kifenq
    concrete5_9
    embed_timeline
    201203_keynote

@@ -26,7 +26,7 @@ Twitter
      interval: 30000,
      title: 'blender',
      subject: 'nipponn no blender',
-     width: 250,
+     width: 400,
      height: 300,
      theme: {
        shell: {
@@ -83,7 +83,7 @@ Twitter
 ロゴを導入
 ----------
 
-ロゴ画像を用意して、左のナビゲーションの上側に。180 pix 幅くらいかな。
+ロゴ画像を用意して、左のナビゲーションの上側に。200 pix 幅くらいかな。
 
 .. code-block:: python
 
@@ -100,7 +100,7 @@ conf.py で使用しているテーマを確認。
 
    html_theme = 'default'
 
-``C:\Python26\Lib\site-packages\Sphinx-1.1.2-py2.6.egg\sphinx\themes\default\theme.conf``で設定できる識別子を確認。
+``C:\Python26\Lib\site-packages\Sphinx-1.1.2-py2.6.egg\sphinx\themes\default\theme.conf`` で設定できる識別子を確認。
 
 ::
 
