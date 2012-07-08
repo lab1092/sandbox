@@ -16,6 +16,8 @@ Contents:
 .. toctree::
    :maxdepth: 1
 
+   51784910
+   201206_event_sponcer
    201206_Sphinx_Table
    google-chart-sample_kifenq
    concrete5_9
