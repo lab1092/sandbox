@@ -16,6 +16,7 @@ Contents:
 .. toctree::
    :maxdepth: 1
 
+   wbosaka13
    51784910
    201206_event_sponcer
    201206_Sphinx_Table
