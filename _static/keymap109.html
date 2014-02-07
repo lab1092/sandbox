@@ -1,0 +1,212 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<style type="text/css">  
+<!-- 
+
+#tbl span{
+    display: inline-block;
+    
+}
+
+#tbl .knone{ 
+    padding: 2px 4px;
+}
+
+#tbl .key{ 
+    border:solid 1px black;
+    border-radius:5px; 
+    margin: 1px;
+    padding: 2px 2px;
+    height: 30px;
+    background-color: rgb(230, 230, 230);
+    background: -moz-linear-gradient(50% 0%, rgb(255, 255, 255), rgb(230, 230, 230));
+    background: -webkit-gradient(linear, left top , left bottom , from(rgb(255, 255, 255)), color-stop(50%, rgb(255, 255, 255)), to(rgb(230, 230, 230)));
+    font-size: 14px;
+    }
+
+.board {
+    margin: 0.5em 6px;
+    border: 1px solid rgb(200, 200, 200);
+    background: none repeat scroll 0% 0% #DDDDDD;
+    color: rgb(0, 0, 0);
+    border-radius: 7px 7px 7px 7px;
+    padding: 13px 13px;
+    text-decoration: none;
+}
+
+.note {
+    margin: 0.5em 6px;
+    border: 1px solid rgb(200, 220, 200);
+    background-color: #F0FFF0;
+    color: rgb(0, 0, 0);
+    border-radius: 7px 7px 7px 7px;
+    padding: 13px 13px;
+    text-decoration: none;
+}
+
+#tbl .width1 { width : 16px;}
+#tbl .width2 { width : 32px;}
+#tbl .width3 { width : 51px;}
+#tbl .width4 { width : 74px;}
+#tbl .width5 { width : 84px;}
+
+#txt1 { font-size: 18px; }
+
+-->  
+</style>  
+
+
+<script>
+
+var kmap = [
+           [
+             [["Esc",2,27],["",1,],["F1",2,112],["F2",2,113],["F3",2,114],["F4",2,115],["",1],["F5",2,116,],["F6",2,117],["F7",2,118],["F8",2,119],["",1],["F9",2,120],["F10",2,121],["F11",2,122],["F12",2,123],["",1]],
+             [["全角",2,243],["1",2,49],["2",2,50],["3",2,51],["4",2,52],["5",2,53],["6",2,54],["7",2,55],["8",2,56],["9",2,57],["0",2,48],["-",2,95],["^",2,222],["\\",2,92],["BS",2,92]],
+             [["Tab",3,9],["Q",2,81],["W",2,87],["E",2,69],["R",2,82],["T",2,84],["Y",2,89],["U",2,85],["I",2,73],["O",2,79],["P",2,80],["@",2,126],["[",2,91],["Enter",3,13]],
+             [["Caps Lock",4,240],["A",2,65],["S",2,83],["D",2,68],["F",2,70],["G",2,71],["H",2,72],["J",2,74],["K",2,75],["L",2,76],[";",2,61],[":",2,59],["]",2,93],["",2]],
+             [["Shift",5,16],["Z",2,90],["X",2,88],["C",2,67],["V",2,86],["B",2,66],["N",2,78],["M",2,77],[",",2,44],[".",2,62],["/",2,47],["\\",2,226],["Shift",3,16]],
+             [["Ctrl",4,17],["Win",2,91],["Alt",2,18],["無変換",4,29],["Space",4,32],["変換",3,28],["ひら",3,242],["Alt",2,28],["Win",2,92],["App",2,93],["Ctrl",2,17]]
+           ],
+           [
+             [["Print",2,44],["Slock",2,145],["Pause",2,19]],
+             [["Insert",2,45],["Home",2,36],["PgUp",2,33]],
+             [["Delete",2,46],["End",2,35],["PgDn",2,34]],
+             [["",2],["",2],["",2]],
+             [["",2],["↑",2,26],["",2]],
+             [["←",2,25],["↓",2,28],["→",2,27]]
+           ],
+           [
+             [["",2],["",2],["",2],["",2]],
+             [["Num",2,144],["/",2,111],["*",2,106],["-",2,109]],
+             [["7",2,103],["8",2,104],["9",2,105],["+",2,107]],
+             [["4",2,100],["5",2,101],["6",2,102],["",2]],
+             [["1",2,97],["2",2,98],["3",2,99],["Ent",2,13]],
+             [["0",4,96],[".",2,110],["",2]]
+           ]
+           ];
+
+var clist = ["tbl1","tbl2","tbl3"];
+
+// ココから下を頑張って書いてください!!
+var bindlist={
+    27:{"*":"[Esc]キャンセル"},
+    13:{"*":"[Enter]確定"},
+     9:{"ob":"[Tab]エディットモードへ",
+        "ed":"[Tab]オブジェクトモードへ\n\n\n\n\n\n\n\aaaa"
+       }
+};
+
+
+///
+
+function htmlEscape(s){
+    s=s.replace(/&/g,'&amp;');
+    s=s.replace(/>/g,'&gt;');
+    s=s.replace(/</g,'&lt;');
+    return s;
+}
+
+function ctxt(note){
+
+    var txt = "定義の登録がありません(他のモードには存在する可能性があります)";
+    var mode = "";
+    var mtxt = "";
+    
+
+    if( note['*'] != "" ) {
+       txt = note['*'];
+    }
+
+    mode = document.getElementById("mode").value;
+    mtxt = note[mode];
+    if( mtxt != "" && mtxt != undefined ) {
+        txt = mtxt;
+    }
+
+    return txt;
+
+}
+
+function c( num ){
+    var note = "";
+    if( num != "" ) {
+        note = bindlist[parseInt(num)];
+    }
+    if( note != undefined ) {
+        document.getElementById("txt1").value= ctxt(note);
+    }else{
+        document.getElementById("txt1").value= "(キーコード["+num+"]:定義がありません)";
+    }
+}
+
+function a(){
+
+    var s = "";
+    var wc = "";
+    
+    for (var k = 0; k < clist.length; k++ ) {
+    
+        s = "";
+        wc = "";
+
+       for (var j = 0; j < kmap[k].length; j ++) {
+            var kmapc = kmap[k][j];
+            for( var i=0; i < kmapc.length; i ++ ){
+                wc = "knone ";
+                if( kmapc[i][0] != ""){
+                    wc = "key ";
+                }
+                if( kmapc[i][1] > 0){
+                    wc = wc + "width"+kmapc[i][1].toString();
+                }
+                s = s + "<span"
+                if( kmap[k][j][i].length == 3 ) {
+                    s= s+ " onclick=\"c('" + kmap[k][j][i][2].toString() + "');\"";
+                }
+                s = s + " class=\"" + wc +"\" title=\"" + htmlEscape(kmap[k][j][i][0])
+                   + "\" >"+ htmlEscape(kmap[k][j][i][0]);
+                if( kmap[k][j][i].length == 3 && false) {
+                    s= s+ "<br>(" + kmap[k][j][i][2].toString() + ")";
+                }
+                s = s + "</span>";
+            }
+            s= s+"<br>";
+        }
+
+        document.getElementById(clist[k]).innerHTML = "<div>"+s+"</div>";
+
+    }
+}
+
+</script>
+
+
+</head>
+<body onload="a();">
+<div style="width:960px;">
+<div class="note">
+<h1>Blenderキーボードノート</h1>
+モードを選んでください &gt; 
+<select id="mode">
+  <option value="ob">Object</option>
+  <option value="ed">Edit</option>
+</select>
+</div>
+<div class="board">
+<table id="tbl">
+<tr>
+<td><div id="tbl1" ></div></td>
+<td><div id="tbl2" ></div></td>
+<td><div id="tbl3" ></div></td>
+</tr>
+</table>
+</div>
+<div class="note">
+対応バージョン: 2.65a (とか言ってますがまだいろいろ実装してませんからね)<br>
+<textarea id="txt1" style="width:900px" rows="5" readonly="readonly" scroll="yes">(テキスト)</textarea>
+</div>
+</div>
+</body>
+</html>

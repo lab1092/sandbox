@@ -3,10 +3,11 @@ Welcome to sandbox's documentation!
 
 Topic:
 
+何故か Javascript で何かしてる
 
-* :doc:`pyfes_201203`
-   * `pyfesのステマ資料 <http://dl.dropbox.com/u/3864210/sphasa001/03_pyfes/index.html>`_
-   * `参考資料:Sphinx朝会の資料 <http://dl.dropbox.com/u/3864210/sphasa001/part1.html>`_
+   * `ローマ字かな変換 <_static/romankana_t.html>`_
+   * `Blenderキーボードノート <_static/keymap109.html>`_
+
   
 以下はいろいろ。
 

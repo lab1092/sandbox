@@ -1,0 +1,466 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="assets/css/bootstrap.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="lib/extra.css" />
+<script src="assets/js/bootstrap.js"></script>
+
+<title></title>
+
+<script>
+
+var ROMANHIRAGANATABLE = {
+    'A'   :'あ',
+    'I'   :'い',
+    'U'   :'う',
+    'E'   :'え',
+    'O'   :'お',
+    'KA'  :'か',
+    'KI'  :'き',
+    'KU'  :'く',
+    'KE'  :'け',
+    'KO'  :'こ',
+    'SA'  :'さ',
+    'SI'  :'し',
+    'SU'  :'す',
+    'SE'  :'せ',
+    'SO'  :'そ',
+    'TA'  :'た',
+    'TI'  :'ち',
+    'TU'  :'つ',
+    'TE'  :'て',
+    'TO'  :'と',
+    'NA'  :'な',
+    'NI'  :'に',
+    'NU'  :'ぬ',
+    'NE'  :'ね',
+    'NO'  :'の',
+    'HA'  :'は',
+    'HI'  :'ひ',
+    'HU'  :'ふ',
+    'HE'  :'へ',
+    'HO'  :'ほ',
+    'MA'  :'ま',
+    'MI'  :'み',
+    'MU'  :'む',
+    'ME'  :'め',
+    'MO'  :'も',
+    'YA'  :'や',
+    'YU'  :'ゆ',
+    'YO'  :'よ',
+    'RA'  :'ら',
+    'RI'  :'り',
+    'RU'  :'る',
+    'RE'  :'れ',
+    'RO'  :'ろ',
+    'WA'  :'わ',
+    'WI'  :'うぃ',
+    'WU'  :'う',
+    'WE'  :'うぇ',
+    'WO'  :'を',
+    'NN'  :'ん',
+    'GA'  :'が',
+    'GI'  :'ぎ',
+    'GU'  :'ぐ',
+    'GE'  :'げ',
+    'GO'  :'ご',
+    'ZA'  :'ざ',
+    'ZI'  :'じ',
+    'ZU'  :'ず',
+    'ZE'  :'ぜ',
+    'ZO'  :'ぞ',
+    'DA'  :'だ',
+    'DI'  :'ぢ',
+    'DU'  :'づ',
+    'DE'  :'で',
+    'DO'  :'ど',
+    'BA'  :'ば',
+    'BI'  :'び',
+    'BU'  :'ぶ',
+    'BE'  :'べ',
+    'BO'  :'ぼ',
+    'PA'  :'ぱ',
+    'PI'  :'ぴ',
+    'PU'  :'ぷ',
+    'PE'  :'ぺ',
+    'PO'  :'ぽ',
+    'FA'  :'ふぁ',
+    'FI'  :'ふぃ',
+    'FU'  :'ふ',
+    'FE'  :'ふぇ',
+    'FO'  :'ふぉ',
+    'CA'  :'か',
+    'CI'  :'し',
+    'CU'  :'く',
+    'CE'  :'せ',
+    'CO'  :'こ',
+    'LA'  :'ぁ',
+    'LI'  :'ぃ',
+    'LU'  :'ぅ',
+    'LE'  :'ぇ',
+    'LO'  :'ぉ',
+    'XA'  :'ぁ',
+    'XI'  :'ぃ',
+    'XU'  :'ぅ',
+    'XE'  :'ぇ',
+    'XO'  :'ぉ',
+    'KYA' :'きゃ',
+    'KYI' :'きぃ',
+    'KYU' :'きゅ',
+    'KYE' :'きぇ',
+    'KYO' :'きょ',
+    'SHA' :'しゃ',
+    'SHI' :'し',
+    'SHU' :'しゅ',
+    'SHE' :'しぇ',
+    'SHO' :'しょ',
+    'SYA' :'しゃ',
+    'SYI' :'しぃ',
+    'SYU' :'しゅ',
+    'SYE' :'しぇ',
+    'SYO' :'しょ',
+    'TYA' :'ちゃ',
+    'TYI' :'ちぃ',
+    'TYU' :'ちゅ',
+    'TYE' :'ちぇ',
+    'TYO' :'ちょ',
+    'CYA' :'ちゃ',
+    'CYI' :'ちぃ',
+    'CYU' :'ちゅ',
+    'CYE' :'ちぇ',
+    'CYO' :'ちょ',
+    'NYA' :'にゃ',
+    'NYI' :'にぃ',
+    'NYU' :'にゅ',
+    'NYE' :'にぇ',
+    'NYO' :'にょ',
+    'HYA' :'ひゃ',
+    'HYI' :'ひぃ',
+    'HYU' :'ひゅ',
+    'HYE' :'ひぇ',
+    'HYO' :'ひょ',
+    'MYA' :'みゃ',
+    'MYI' :'みぃ',
+    'MYU' :'みゅ',
+    'MYE' :'みぇ',
+    'MYO' :'みょ',
+    'RYA' :'りゃ',
+    'RYI' :'りぃ',
+    'RYU' :'りゅ',
+    'RYE' :'りぇ',
+    'RYO' :'りょ',
+    'THA' :'てゃ',
+    'THI' :'てぃ',
+    'THU' :'てゅ',
+    'THE' :'てぇ',
+    'THO' :'てょ',
+    'GYA' :'ぎゃ',
+    'GYI' :'ぎぃ',
+    'GYU' :'ぎゅ',
+    'GYE' :'ぎぇ',
+    'GYO' :'ぎょ',
+    'ZYA' :'じゃ',
+    'ZYI' :'じぃ',
+    'ZYU' :'じゅ',
+    'ZYE' :'じぇ',
+    'ZYO' :'じょ',
+    'JYA' :'じゃ',
+    'JYI' :'じぃ',
+    'JYU' :'じゅ',
+    'JYE' :'じぇ',
+    'JYO' :'じょ',
+    'JA' :'じゃ',
+    'JI' :'じ',
+    'JU' :'じゅ',
+    'JE' :'じぇ',
+    'JO' :'じょ',
+    'DYA' :'ぢゃ',
+    'DYI' :'ぢぃ',
+    'DYU' :'ぢゅ',
+    'DYE' :'ぢぇ',
+    'DYO' :'ぢょ',
+    'BYA' :'びゃ',
+    'BYI' :'びぃ',
+    'BYU' :'びゅ',
+    'BYE' :'びぇ',
+    'BYO' :'びょ',
+    'PYA' :'ぴゃ',
+    'PYI' :'ぴぃ',
+    'PYU' :'ぴゅ',
+    'PYE' :'ぴぇ',
+    'PYO' :'ぴょ',
+    'FYA' :'ふゃ',
+    'FYI' :'ふぃ',
+    'FYU' :'ふゅ',
+    'FYE' :'ふぇ',
+    'FYO' :'ふょ',
+    'DHA' :'でゃ',
+    'DHI' :'でぃ',
+    'DHU' :'でゅ',
+    'DHE' :'でぇ',
+    'DHO' :'でょ',
+    'XYA' :'ゃ',
+    'XYI' :'ぃ',
+    'XYU' :'ゅ',
+    'XYE' :'ぇ',
+    'XYO' :'ょ',
+    'XTU' :'っ',
+    'XWA' :'ゎ'
+    };
+
+var ROMANHIRAGANATABLE_NASAL = {
+    'N' :'ん'
+    };
+
+var ROMANHIRAGANA_GEMINATECONSOANT = [
+   'K','S','T','H','M','Y','R','W',
+   'G','Z','J','D','B',
+   'P','F','C','L','X'];
+
+var HIRAGANA_GEMINATESTRING = 'っ';
+
+var kanatable = [];
+var naseltable = {};
+var geminatelist = [];
+var geminatestring = "";
+var normal_max = 0;
+var rklist = [];
+var tpflag = false;
+
+var sa="";
+var sb="";
+var sc="";
+var sd="";
+
+
+// makeTable
+var normal = ROMANHIRAGANATABLE;
+var nasel = ROMANHIRAGANATABLE_NASAL;
+var geminate = ROMANHIRAGANA_GEMINATECONSOANT; 
+var gemistr = HIRAGANA_GEMINATESTRING; 
+
+for( var k in normal){
+    if( k.length > normal_max){
+        normal_max = k.length;
+    }
+
+}
+
+for( var i = 0; i < normal_max; i++){
+    kanatable.push({});
+}
+
+var l = 0;
+
+for(var x in normal){
+    l = x.length;
+    if(l > 0 ){
+        if ( !( x in kanatable[l-1])){
+            kanatable[l-1][x] = normal[x];
+        }
+    }
+}
+
+for(var x in nasel){
+    naseltable[x] = nasel[x];
+}
+
+for(var i = 0; i < geminate.length; i++){
+    geminatelist.push(geminate[i]);
+}
+
+geminatestring = gemistr;
+
+
+////
+
+function convertline( s ){
+
+    var o="";
+    var l = s.length;
+    var c = 0;
+    var p = "";
+    
+    rklist = [];
+    
+    while(c < l){
+    
+        var ss= s.substr( c, normal_max );
+        if( ss.length == 0 ){
+            break;
+        }
+        //(sa,sb,sc,sd)=self.convert(ss,p);
+        //sa="";
+        //sb="";
+        //sc="";
+        //sd="";
+        convert(ss,p);
+        if( (sc.length > 0) && (sc == p) ){
+            rklist.pop();
+        }
+        
+        rklist.push([sc+sa,sb])
+        
+        if( sb.length >0 ){
+            c = c+ sa.length;
+            p="";
+        }else{
+            p = ss.substr(0,1);
+            c = c+1;
+        }
+
+        //return( rklist );
+    
+    }
+
+    var buf = "";
+    
+    for( var i = 0; i < rklist.length; i++){
+    
+       buf= buf + rklist[i][1] ;
+    
+    }
+
+    return(buf);
+
+}
+
+function convert(ms,mr){
+    sa="";
+    sb="";
+    sc="";
+    sd="";
+    f = false;
+    for( var i = kanatable.length -1 ; i >= 0 ; i--){
+        sa =ms.substr(0,i+1);
+        if( sa in kanatable[i] ){
+            sb = kanatable[i][sa];
+            break;
+        }
+    }
+    if( sb.length > 0 ){
+        sc = "";
+        for(var i = 0; i < geminatelist.length; i++){
+            if( geminatelist[i] == mr ){
+                f = true;
+            }
+        }
+        if(f){
+            if(sa.substr(0,1) == mr){
+                sb = geminatestring + sb;
+                sc = mr;
+            }
+        }
+        
+    }else if( sa in naseltable ){
+        sb = naseltable[sa];
+    }else{
+        sd =ms.substr(0,1);
+    }
+
+}
+
+function printtables(){
+
+    var buf1 = "<tr>";
+    var buf2 = "<tr>";
+    
+    for( var i = 0; i < rklist.length; i++){
+    
+       buf1= buf1 + "<td>"+ rklist[i][0] +"</td>" ;
+       buf2= buf2 + "<td>"+ rklist[i][1] +"</td>" ;
+    
+    }
+
+    buf1 = buf1+"</tr>";
+    buf2 = buf2+"</tr>";
+
+    document.getElementById("tbl1").innerHTML = "<table border='1' >"+buf1+buf2+"</table>";
+}
+
+
+///
+
+function a_c(){
+    document.getElementById("txt1").value = "";
+    document.getElementById("txt2").value = "";
+    document.getElementById("tbl1").innerHTML = "<pre></pre>";
+}
+function a_f(){
+    var obj = document.getElementById("txt1");
+    var out;
+    var txt = obj.value;
+    out = convertline( txt );
+    document.getElementById("txt2").value = out
+
+    printtables();
+    
+    return (true);
+}
+
+function a_g(txt){
+
+    document.getElementById("txt1").value = txt;
+    a_f();
+
+    return (true);
+}
+
+//Get URL Param
+function getParameter(key) {
+    var str = location.search.split("?");
+    if (str.length < 2) {
+        return "";
+    }
+    
+    var params = str[1].split("&");
+    for (var i = 0; i < params.length; i++) {
+        var keyVal = params[i].split("=");
+        if (keyVal[0] == key && keyVal.length == 2) {
+            return decodeURIComponent(keyVal[1]);
+        }
+    }
+    return "";
+}
+
+function initpage(){
+    var txt = getParameter('q');
+    
+    if (txt != "" ) {
+        a_g(txt);
+    }
+}
+
+</script>
+</head>
+<body onLoad="initpage()">
+<div id="container">
+<div id="main">
+<div class="inputpanel">
+<form id="f1">
+ローマ字からかなに変換します。大文字半角のAからZまでが変換対象です。<br>
+URLの末尾に"q=&lt;hoge&gt;"と記載することで変換文字を与えられます。
+<blockquote>https://dl.dropbox.com/u/3864210/romankana_t.html?q=BURENDAA<br>→ぶれんだあ</blockquote>
+<br />
+ROMAN:<br />
+<input type="textbox" id="txt1"  style="width:500px"  />
+<input type="button" id="btn1"  value="Convert!!" onclick="a_f();" class="btn btn-large btn-primary" />
+<input type="button" id="btna"  value="クリア" onclick="a_c();" class="btn btn-large" />
+<br />
+KANA:<br />
+<input type="textbox" id="txt2"  style="width:500px" />
+<br />
+<input type="button" id="btnb"  value="もやっともやっと" onclick="a_g('MOYATTOMOYATTO');" class="btn" />
+<input type="button" id="btnc"  value="なんだかんださけんだって" onclick="a_g('NANDAKANDASAKENDATTE');" class="btn" />
+<input type="button" id="btnd"  value="にゃにゅにょにょにょ" onclick="a_g('NYANYUNYONYONYO');" class="btn" />
+<input type="button" id="btne"  value="ぼくはたいがあ" onclick="a_g('BOKUHATAIGAA');" class="btn" />
+
+</form>
+</div> <!-- class="inputpanel" -->
+<div  class="infopanel" >
+<div id="tbl1" ></div>
+</div><!-- infopanel -->
+</div><!-- main -->
+</div><!-- container -->
+</body>
+</html>
